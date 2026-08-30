@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BHOOMIHUB — Your Land. Your Legacy. Premium residential plots and land investment opportunities." />
+  <title>BHOOMIHUB — Your Land. Your Legacy.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="loader"><div class="loader-logo">BHOOMIHUB</div></div>
+
+  <header class="navbar" id="navbar">
+    <a class="brand" href="#home">BHOOMIHUB<span>.</span></a>
+    <nav>
+      <a href="#home">Home</a><a href="#about">About</a><a href="#properties">Properties</a>
+      <a href="#locations">Locations</a><a href="#why-us">Why Us</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-wa" href="https://wa.me/919876543210?text=Hi%20BHOOMIHUB%2C%20I'm%20interested%20in%20your%20properties." target="_blank" rel="noopener">WhatsApp ↗</a>
+    <button class="menu-toggle" aria-label="Open menu"><span></span><span></span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg"></div><div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">PREMIUM LAND & PROPERTY</p>
+        <h1><span>YOUR LAND.</span><span>YOUR LEGACY.</span></h1>
+        <p class="hero-copy">Building Dreams. Connecting You to the Right Land.</p>
+        <p class="hero-desc">Discover thoughtfully selected land and property opportunities with BHOOMIHUB — where location, trust and long-term value come together.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#properties">Explore Properties <span>→</span></a>
+          <a class="btn btn-outline" href="#contact">Book a Site Visit <span>↗</span></a>
+        </div>
+      </div>
+      <div class="scroll-cue">SCROLL TO DISCOVER <span>↓</span></div>
+    </section>
+
+    <section class="intro section" id="about">
+      <div class="intro-image reveal-image"></div>
+      <div class="intro-copy reveal">
+        <p class="eyebrow">WELCOME TO BHOOMIHUB</p>
+        <h2>MORE THAN LAND.<br><em>IT'S YOUR LEGACY.</em></h2>
+        <p class="lead">Land is where dreams begin.</p>
+        <p>A place to build a home. A place to grow an investment. A place to create memories. A place to leave something behind.</p>
+        <p>At BHOOMIHUB, we help you find the right place for your future.</p>
+      </div>
+    </section>
+
+    <section class="search-wrap">
+      <div class="search-panel reveal">
+        <div><small>FIND YOUR PLACE</small><h3>Search with purpose.</h3></div>
+        <label>Location<select id="locationFilter"><option value="all">All locations</option><option>Saravanampatti</option><option>Kovaipudur</option><option>Pollachi Main Road</option></select></label>
+        <label>Property Type<select id="typeFilter"><option value="all">All types</option><option>Residential Plots</option><option>Premium Residential Plots</option><option>Investment Plots</option></select></label>
+        <label>Plot Size<select id="sizeFilter"><option value="all">Any size</option><option>1000–2000 Sq.Ft.</option><option>1200–2400 Sq.Ft.</option><option>1500–3000 Sq.Ft.</option></select></label>
+        <button class="btn btn-dark" id="exploreBtn">Explore →</button>
+      </div>
+    </section>
+
+    <section class="properties section" id="properties">
+      <div class="section-head reveal"><div><p class="eyebrow">SELECTED PROPERTIES</p><h2>PLACES WORTH<br><em>OWNING.</em></h2></div><p>Thoughtfully selected opportunities across promising Coimbatore locations.</p></div>
+      <div class="property-grid" id="propertyGrid"></div>
+    </section>
+
+    <section class="counters">
+      <div class="counter"><strong data-target="10">0</strong><span>Projects</span></div>
+      <div class="counter"><strong data-target="250">0</strong><span>Happy Customers</span></div>
+      <div class="counter"><strong data-target="500">0</strong><span>Plots</span></div>
+      <div class="counter"><strong data-target="5">0</strong><span>Locations</span></div>
+    </section>
+
+    <section class="why section" id="why-us">
+      <div class="section-head reveal"><div><p class="eyebrow">WHY BHOOMIHUB?</p><h2>YOUR TRUST.<br><em>OUR RESPONSIBILITY.</em></h2></div></div>
+      <div class="why-grid">
+        <article><b>01</b><h3>TRUST</h3><p>Property information presented with clarity and transparency.</p></article>
+        <article><b>02</b><h3>LOCATION</h3><p>Properties selected with accessibility and development potential in mind.</p></article>
+        <article><b>03</b><h3>QUALITY</h3><p>We focus on quality property opportunities and customer experience.</p></article>
+        <article><b>04</b><h3>TRANSPARENCY</h3><p>Clear communication throughout your property journey.</p></article>
+        <article><b>05</b><h3>GUIDANCE</h3><p>Personalized support based on your requirements.</p></article>
+        <article><b>06</b><h3>SUPPORT</h3><p>From property discovery to site visits and purchase support.</p></article>
+      </div>
+    </section>
+
+    <section class="map-section" id="locations">
+      <div class="map-copy reveal"><p class="eyebrow">EXPLORE OUR LOCATIONS</p><h2>FIND YOUR NEXT<br><em>PROPERTY.</em></h2><p>Explore BHOOMIHUB properties across our locations.</p><a class="btn btn-gold" href="https://www.google.com/maps/search/Coimbatore,+Tamil+Nadu" target="_blank" rel="noopener">Open Google Maps ↗</a></div>
+      <div class="map-card">
+        <iframe title="BHOOMIHUB location map" src="https://www.google.com/maps?q=Coimbatore%2C%20Tamil%20Nadu&output=embed" loading="lazy"></iframe>
+        <div class="map-note">Project coordinates can be configured in <code>script.js</code> when real locations are supplied.</div>
+      </div>
+    </section>
+
+    <section class="story section">
+      <div class="story-copy reveal"><p class="eyebrow">OUR STORY</p><h2>WE BELIEVE<br><em>LAND IS MORE THAN PROPERTY.</em></h2><p>At BHOOMIHUB, we believe property ownership is about more than buying a piece of land.</p><p>It's about building a future, creating opportunities and leaving something meaningful for the next generation.</p><p>Our approach combines carefully selected properties, transparent communication and customer-focused service.</p></div>
+      <div class="story-image"></div>
+    </section>
+
+    <section class="values">
+      <div><small>01</small><h3>TRUST</h3><p>The foundation of every relationship.</p></div>
+      <div><small>02</small><h3>TRANSPARENCY</h3><p>Clear information. Clear decisions.</p></div>
+      <div><small>03</small><h3>QUALITY</h3><p>Opportunities worth considering.</p></div>
+      <div><small>04</small><h3>LEGACY</h3><p>Property that can live beyond today.</p></div>
+    </section>
+
+    <section class="process section">
+      <div class="section-head"><div><p class="eyebrow">OUR PROCESS</p><h2>FROM SEARCH<br><em>TO OWNERSHIP.</em></h2></div></div>
+      <div class="timeline">
+        <div><b>01</b><h3>DISCOVER</h3><p>Tell us what you're looking for.</p></div>
+        <div><b>02</b><h3>EXPLORE</h3><p>Discover suitable properties.</p></div>
+        <div><b>03</b><h3>VISIT</h3><p>Experience the location yourself.</p></div>
+        <div><b>04</b><h3>VERIFY</h3><p>Review property information and documentation.</p></div>
+        <div><b>05</b><h3>OWN</h3><p>Move forward with your property journey.</p></div>
+      </div>
+    </section>
+
+    <section class="investment">
+      <div class="investment-bg"></div><div class="investment-overlay"></div>
+      <div class="investment-content reveal"><p class="eyebrow">LONG-TERM THINKING</p><h2>INVEST IN TOMORROW.</h2><h3>LAND TODAY.<br>LEGACY TOMORROW.</h3><p>A well-chosen property can become a foundation for your family's future.</p><a class="btn btn-gold" href="#properties">Explore Investment Properties →</a></div>
+    </section>
+
+    <section class="testimonial section">
+      <p class="eyebrow">PEOPLE. PROPERTIES. STORIES.</p>
+      <blockquote>“The BHOOMIHUB team made our property journey simple and comfortable.”</blockquote>
+      <strong>RAJESH K.</strong><span>Coimbatore · Placeholder testimonial</span>
+    </section>
+
+    <section class="visit-cta">
+      <div class="visit-bg"></div><div class="visit-overlay"></div>
+      <div class="visit-content reveal"><p class="eyebrow">EXPERIENCE IT YOURSELF</p><h2>SEE THE LAND.<br><em>IMAGINE THE FUTURE.</em></h2><p>The best way to understand a property is to experience it yourself.</p><a class="btn btn-gold" href="#contact">Book a Site Visit</a></div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="contact-copy reveal"><p class="eyebrow">GET IN TOUCH</p><h2>LET'S FIND<br><em>YOUR PLACE.</em></h2><p>Your next chapter could begin here.</p><div class="contact-details"><span>+91 98765 43210</span><span>hello@bhoomihub.in</span><span>123 Business Avenue, Coimbatore, Tamil Nadu – 641035</span></div></div>
+      <form id="contactForm" class="contact-form">
+        <input required name="name" placeholder="Name *"><input required name="phone" placeholder="Phone Number *"><input type="email" name="email" placeholder="Email">
+        <select name="property"><option value="">Interested Property</option><option>Green Valley</option><option>Bhoomi Gardens</option><option>Horizon Estates</option></select>
+        <select name="location"><option value="">Preferred Location</option><option>Saravanampatti</option><option>Kovaipudur</option><option>Pollachi Main Road</option></select>
+        <input name="budget" placeholder="Budget"><input name="size" placeholder="Plot Size"><textarea name="message" placeholder="Message"></textarea>
+        <button class="btn btn-dark" type="submit">Send Enquiry →</button><p id="formMessage" class="form-message"></p>
+      </form>
+    </section>
+  </main>
+
+  <a class="floating-wa" href="https://wa.me/919876543210?text=Hi%20BHOOMIHUB%2C%20I'm%20interested%20in%20your%20properties." target="_blank" rel="noopener" aria-label="WhatsApp">◔</a>
+
+  <footer>
+    <div class="footer-main"><div><a class="brand" href="#home">BHOOMIHUB<span>.</span></a><p>YOUR LAND. YOUR LEGACY.</p><small>Building Dreams. Connecting You to the Right Land.</small></div>
+    <div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#properties">Properties</a><a href="#locations">Locations</a><a href="#why-us">Why Us</a><a href="#contact">Contact</a></div>
+    <div><p class="eyebrow">FOLLOW US</p><div class="socials"><a href="#" aria-label="Instagram">Instagram</a><a href="#" aria-label="Facebook">Facebook</a><a href="#" aria-label="YouTube">YouTube</a></div></div></div>
+    <div class="footer-bottom"><span>© 2026 BHOOMIHUB. ALL RIGHTS RESERVED.</span><span>Privacy Policy · Terms & Conditions · Disclaimer</span></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
