@@ -24,14 +24,15 @@ export default function Footer() {
         >
           {/* Brand info */}
           <div>
-            <span className="brand-title" style={{ fontSize: "1.6rem" }}>
-              BHOOMIHUB<span>.</span>
-            </span>
-            <p style={{ color: "var(--color-gold)", fontSize: "0.82rem", letterSpacing: "0.15em", textTransform: "uppercase", marginTop: "0.4rem", fontWeight: 700 }}>
-              Your Land. Your Legacy.
-            </p>
-            <p style={{ color: "rgba(255, 255, 255, 0.65)", fontSize: "0.9rem", lineHeight: 1.7, marginTop: "1.2rem" }}>
-              Coimbatore’s premier direct-to-consumer land acquisition platform. Delivering DTCP & TN RERA approved residential layouts with 100% legal title clearance and zero brokerage.
+            <Link href="#home" style={{ display: "inline-block", marginBottom: "1rem" }}>
+              <img
+                src="/images/bhoomihub-logo.jpg"
+                alt="BHOOMIHUB — Your Land. Your Legacy."
+                style={{ height: "68px", width: "auto", objectFit: "contain", borderRadius: "6px" }}
+              />
+            </Link>
+            <p style={{ color: "rgba(255, 255, 255, 0.68)", fontSize: "0.88rem", lineHeight: 1.7, marginTop: "0.5rem" }}>
+              Coimbatore’s premier direct-to-consumer land acquisition platform. Delivering DTCP &amp; TN RERA approved residential layouts with 100% legal title clearance and zero brokerage.
             </p>
             <div style={{ marginTop: "1.5rem" }}>
               <a
@@ -56,7 +57,7 @@ export default function Footer() {
               <Link href="#properties" style={{ transition: "color 0.2s" }}>Kovaipudur (Western Ghats Breeze)</Link>
               <Link href="#properties" style={{ transition: "color 0.2s" }}>Pollachi Road (4-Lane NH-83)</Link>
               <Link href="#properties" style={{ transition: "color 0.2s" }}>Avinashi Road (Premium Arterial)</Link>
-              <Link href="#properties" style={{ transition: "color 0.2s" }}>Sulur (Defence Corridor & Airport)</Link>
+              <Link href="#properties" style={{ transition: "color 0.2s" }}>Sulur (Defence Corridor &amp; Airport)</Link>
               <Link href="#properties" style={{ transition: "color 0.2s" }}>Siruvani Foothills (Eco-Farmland)</Link>
             </div>
           </div>
@@ -64,14 +65,14 @@ export default function Footer() {
           {/* Legal & Tools */}
           <div>
             <h4 style={{ color: "white", fontSize: "0.85rem", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
-              Platform & Tools
+              Platform &amp; Tools
             </h4>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", fontSize: "0.88rem", color: "rgba(255, 255, 255, 0.7)" }}>
-              <Link href="#calculator">Land Investment & EMI Calculator</Link>
+              <Link href="#calculator">Land Investment &amp; EMI Calculator</Link>
               <Link href="#legal">7-Point Legal Verification Protocol</Link>
-              <Link href="#connectivity">Connectivity & Distance Matrix</Link>
+              <Link href="#connectivity">Connectivity &amp; Distance Matrix</Link>
               <Link href="#why-us">Zero Brokerage Guarantee</Link>
-              <Link href="#contact">Book Free Site Visit</Link>
+              <Link href="#contact">Book Free VIP Site Visit</Link>
             </div>
           </div>
 

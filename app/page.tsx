@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, Suspense } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LandscapeCanvas from "../components/LandscapeCanvas";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
+import UtmScrollTracker from "../components/UtmScrollTracker";
 
 import HeroSection from "../components/home/HeroSection";
 import SearchFilterSection from "../components/home/SearchFilterSection";
@@ -70,6 +71,12 @@ export default function HomePage() {
   return (
     <>
       <LandscapeCanvas />
+      
+      {/* Scroll spy & dynamic UTM URL updater */}
+      <Suspense fallback={null}>
+        <UtmScrollTracker />
+      </Suspense>
+
       <Header onOpenSiteVisit={() => handleOpenSiteVisit()} />
 
       <main style={{ position: "relative", zIndex: 1 }}>
@@ -108,7 +115,7 @@ export default function HomePage() {
 
       <Footer />
 
-      {/* Floating Concierge */}
+      {/* Floating Concierge with Circular Badge & Smooth Hover Slide */}
       <FloatingWhatsApp
         currentPropertyName={detailModalProperty ? detailModalProperty.name : undefined}
       />

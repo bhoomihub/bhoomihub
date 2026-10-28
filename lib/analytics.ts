@@ -5,6 +5,16 @@ export interface AnalyticsEventParams {
   [key: string]: unknown;
 }
 
+export interface UtmParams {
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_content?: string;
+  utm_term?: string;
+  gclid?: string;
+  fbclid?: string;
+}
+
 export function trackEvent(eventName: string, params: AnalyticsEventParams = {}): void {
   if (typeof window !== "undefined") {
     try {
@@ -33,9 +43,51 @@ export function trackEvent(eventName: string, params: AnalyticsEventParams = {})
   }
 }
 
-export function generateWhatsAppUrl(phone: string, message: string): string {
+export function getPersistedUtms(): UtmParams {
+  if (typeof window === "undefined") return {};
+  try {
+    const raw = sessionStorage.getItem("bhoomihub_utms");
+    if (raw) return JSON.parse(raw);
+  } catch {
+    // fallback
+  }
+  return {};
+}
+
+export function setPersistedUtms(utms: UtmParams): void {
+  if (typeof window === "undefined") return;
+  try {
+    const current = getPersistedUtms();
+    const merged = { ...current, ...utms };
+    sessionStorage.setItem("bhoomihub_utms", JSON.stringify(merged));
+  } catch {
+    // fallback
+  }
+}
+
+export function generateWhatsAppUrl(phone: string, message: string, sectionContext?: string): string {
   const cleanPhone = phone.replace(/[^0-9]/g, "");
-  const encoded = encodeURIComponent(message);
+  
+  // Append UTM tracking metadata if available
+  let trackedMessage = message;
+  const utms = getPersistedUtms();
+  const trackingTags: string[] = [];
+
+  if (sectionContext) {
+    trackingTags.push(`Section: ${sectionContext.startsWith("#") ? sectionContext : "#" + sectionContext}`);
+  }
+  if (utms.utm_source) {
+    trackingTags.push(`Source: ${utms.utm_source}`);
+  }
+  if (utms.utm_campaign) {
+    trackingTags.push(`Campaign: ${utms.utm_campaign}`);
+  }
+
+  if (trackingTags.length > 0) {
+    trackedMessage += `\n\n[📍 Ref: ${trackingTags.join(" | ")}]`;
+  }
+
+  const encoded = encodeURIComponent(trackedMessage);
   return `https://wa.me/${cleanPhone}?text=${encoded}`;
 }
 

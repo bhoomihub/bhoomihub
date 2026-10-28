@@ -11,63 +11,83 @@ interface HeaderProps {
 export default function Header({ onOpenSiteVisit }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Listen to section change event from UtmScrollTracker
+    const handleSectionChange = (e: Event) => {
+      const customEvent = e as CustomEvent<{ sectionId: string }>;
+      if (customEvent.detail?.sectionId) {
+        setActiveSection(customEvent.detail.sectionId);
+      }
+    };
+    window.addEventListener("bhoomihub:sectionchange", handleSectionChange);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("bhoomihub:sectionchange", handleSectionChange);
+    };
   }, []);
 
   const handleWhatsAppClick = () => {
-    trackEvent("header_whatsapp_click", { location: "navbar" });
+    trackEvent("header_whatsapp_click", { location: "navbar", section: activeSection });
   };
 
   const waUrl = generateWhatsAppUrl(
     BHOOMIHUB_WA_PHONE,
-    "Hello BHOOMIHUB team, I am interested in exploring DTCP & RERA approved residential plots in Coimbatore."
+    "Hello BHOOMIHUB team, I am interested in exploring DTCP & RERA approved residential plots in Coimbatore.",
+    activeSection
   );
+
+  const navLinks = [
+    { href: "#properties", label: "Properties", id: "properties" },
+    { href: "#calculator", label: "ROI & EMI", id: "calculator" },
+    { href: "#legal", label: "Legal Verification", id: "legal" },
+    { href: "#connectivity", label: "Locations", id: "connectivity" },
+    { href: "#why-us", label: "Why Bhoomihub", id: "why-us" },
+    { href: "#contact", label: "Contact", id: "contact" }
+  ];
 
   return (
     <header className={`navbar-header ${scrolled ? "scrolled" : ""}`}>
-      <Link href="/" className="brand-link" onClick={() => setMobileMenuOpen(false)}>
-        <span className="brand-title">
-          BHOOMIHUB<span>.</span>
-        </span>
-        <span className="brand-tagline">Your Land. Your Legacy.</span>
+      <Link href="#home" className="brand-link" onClick={() => setMobileMenuOpen(false)}>
+        <img
+          src="/images/bhoomihub-logo.jpg"
+          alt="BHOOMIHUB — Your Land. Your Legacy."
+          className="brand-logo-img"
+        />
       </Link>
 
       <nav className="nav-menu">
-        <Link href="#properties" className="nav-link">
-          Properties
-        </Link>
-        <Link href="#calculator" className="nav-link">
-          ROI & EMI
-        </Link>
-        <Link href="#legal" className="nav-link">
-          Legal Verification
-        </Link>
-        <Link href="#connectivity" className="nav-link">
-          Locations
-        </Link>
-        <Link href="#why-us" className="nav-link">
-          Why Bhoomihub
-        </Link>
-        <Link href="#contact" className="nav-link">
-          Contact
-        </Link>
+        {navLinks.map(link => {
+          const isActive = activeSection === link.id;
+          return (
+            <Link
+              key={link.id}
+              href={link.href}
+              className={`nav-link ${isActive ? "active" : ""}`}
+            >
+              {link.label}
+              {isActive && <span className="active-pill" />}
+            </Link>
+          );
+        })}
       </nav>
 
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "0.85rem" }}>
         {onOpenSiteVisit && (
           <button
             onClick={() => {
-              trackEvent("nav_book_site_visit_click");
+              trackEvent("nav_book_site_visit_click", { section: activeSection });
               onOpenSiteVisit();
             }}
-            className="btn btn-gold"
-            style={{ padding: "0.65rem 1.2rem", fontSize: "0.72rem" }}
+            className="btn btn-gold nav-site-visit-btn"
+            style={{ padding: "0.6rem 1.15rem", fontSize: "0.72rem" }}
           >
             Book Site Visit ↗
           </button>
@@ -78,8 +98,8 @@ export default function Header({ onOpenSiteVisit }: HeaderProps) {
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleWhatsAppClick}
-          className="btn btn-outline-white"
-          style={{ padding: "0.65rem 1.1rem", fontSize: "0.72rem" }}
+          className="btn btn-outline-white nav-wa-btn"
+          style={{ padding: "0.6rem 1rem", fontSize: "0.72rem" }}
         >
           WhatsApp ↗
         </a>
@@ -88,91 +108,37 @@ export default function Header({ onOpenSiteVisit }: HeaderProps) {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle navigation menu"
-          style={{
-            background: "none",
-            border: "1px solid rgba(255, 255, 255, 0.3)",
-            color: "white",
-            padding: "0.5rem 0.8rem",
-            borderRadius: "4px",
-            cursor: "pointer",
-            display: "none"
-          }}
           className="mobile-toggle-btn"
         >
           {mobileMenuOpen ? "✕" : "☰"}
         </button>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 900px) {
-          .mobile-toggle-btn {
-            display: block !important;
-          }
-        }
-      `}</style>
-
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div
-          style={{
-            position: "fixed",
-            top: "70px",
-            left: 0,
-            right: 0,
-            background: "rgba(6, 26, 16, 0.98)",
-            padding: "2.5rem 2rem",
-            display: "flex",
-            flexDirection: "column",
-            gap: "1.5rem",
-            boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
-            borderBottom: "1px solid rgba(198, 161, 91, 0.2)"
-          }}
-        >
-          <Link
-            href="#properties"
-            onClick={() => setMobileMenuOpen(false)}
-            style={{ color: "white", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}
-          >
-            Properties
-          </Link>
-          <Link
-            href="#calculator"
-            onClick={() => setMobileMenuOpen(false)}
-            style={{ color: "white", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}
-          >
-            ROI & EMI Calculator
-          </Link>
-          <Link
-            href="#legal"
-            onClick={() => setMobileMenuOpen(false)}
-            style={{ color: "white", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}
-          >
-            Legal Verification (DTCP/RERA)
-          </Link>
-          <Link
-            href="#connectivity"
-            onClick={() => setMobileMenuOpen(false)}
-            style={{ color: "white", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}
-          >
-            Locations & Connectivity
-          </Link>
-          <Link
-            href="#why-us"
-            onClick={() => setMobileMenuOpen(false)}
-            style={{ color: "white", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}
-          >
-            Why Bhoomihub
-          </Link>
-          <Link
-            href="#contact"
-            onClick={() => setMobileMenuOpen(false)}
-            style={{ color: "white", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}
-          >
-            Contact & Advisory
-          </Link>
-          <div style={{ paddingTop: "1rem", borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", gap: "1rem" }}>
-            <a href={`tel:${BHOOMIHUB_PHONE}`} style={{ color: "var(--color-gold)", fontSize: "0.9rem" }}>
+        <div className="mobile-drawer">
+          {navLinks.map(link => (
+            <Link
+              key={link.id}
+              href={link.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className={`mobile-nav-link ${activeSection === link.id ? "active" : ""}`}
+            >
+              {link.label} {activeSection === link.id && "•"}
+            </Link>
+          ))}
+          <div style={{ paddingTop: "1.2rem", borderTop: "1px solid rgba(255,255,255,0.15)", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+            <a href={`tel:${BHOOMIHUB_PHONE}`} style={{ color: "var(--color-gold)", fontSize: "0.92rem", fontWeight: 700 }}>
               📞 Call Advisor: {BHOOMIHUB_PHONE}
+            </a>
+            <a
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-emerald"
+              style={{ padding: "0.8rem", textAlign: "center", width: "100%" }}
+            >
+              Chat on WhatsApp ↗
             </a>
           </div>
         </div>

@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     "Zero brokerage land Coimbatore"
   ],
   authors: [{ name: "BHOOMIHUB Real Estate" }],
+  icons: {
+    icon: "/images/bhoomihub-logo.jpg",
+    apple: "/images/bhoomihub-logo.jpg"
+  },
   openGraph: {
     title: "BHOOMIHUB — Your Land. Your Legacy.",
     description:
@@ -25,10 +29,10 @@ export const metadata: Metadata = {
     siteName: "BHOOMIHUB",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+        url: "/images/bhoomihub-logo.jpg",
         width: 1200,
-        height: 630,
-        alt: "BHOOMIHUB Premium Plots Coimbatore"
+        height: 800,
+        alt: "BHOOMIHUB — Your Land. Your Legacy."
       }
     ],
     locale: "en_IN",
@@ -38,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BHOOMIHUB — Your Land. Your Legacy.",
     description: "Premium DTCP & TN RERA approved plots in Coimbatore. 100% legal scrutiny with zero brokerage.",
-    images: ["https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"]
+    images: ["/images/bhoomihub-logo.jpg"]
   }
 };
 
@@ -51,6 +55,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     name: "BHOOMIHUB",
+    image: "https://bhommihub.netlify.app/images/bhoomihub-logo.jpg",
+    logo: "https://bhommihub.netlify.app/images/bhoomihub-logo.jpg",
     description: "Direct-to-consumer premium land plotting and real estate investment platform in Coimbatore.",
     url: "https://bhommihub.netlify.app",
     telephone: "+919876543210",
