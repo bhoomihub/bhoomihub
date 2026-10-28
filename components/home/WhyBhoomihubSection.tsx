@@ -97,6 +97,11 @@ export default function WhyBhoomihubSection() {
           }}
         >
           <div style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto 2.5rem" }}>
+            <img
+              src="/images/bhoomihub-emblem.png"
+              alt="BHOOMIHUB Official Seal"
+              style={{ height: "54px", width: "auto", margin: "0 auto 1rem", display: "block", filter: "drop-shadow(0 2px 8px rgba(198,161,91,0.35))" }}
+            />
             <span className="eyebrow">UNIT ECONOMICS BREAKDOWN</span>
             <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "1.8rem", color: "var(--color-charcoal)" }}>
               Traditional Broker vs. Bhoomihub Direct

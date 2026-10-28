@@ -57,7 +57,7 @@ export default function Header({ onOpenSiteVisit }: HeaderProps) {
     <header className={`navbar-header ${scrolled ? "scrolled" : ""}`}>
       <Link href="#home" className="brand-link" onClick={() => setMobileMenuOpen(false)}>
         <img
-          src="/images/bhoomihub-logo.jpg"
+          src="/images/bhoomihub-logo-horizontal.png"
           alt="BHOOMIHUB — Your Land. Your Legacy."
           className="brand-logo-img"
         />
@@ -93,17 +93,6 @@ export default function Header({ onOpenSiteVisit }: HeaderProps) {
           </button>
         )}
 
-        <a
-          href={waUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={handleWhatsAppClick}
-          className="btn btn-outline-white nav-wa-btn"
-          style={{ padding: "0.6rem 1rem", fontSize: "0.72rem" }}
-        >
-          WhatsApp ↗
-        </a>
-
         {/* Mobile menu toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -117,6 +106,13 @@ export default function Header({ onOpenSiteVisit }: HeaderProps) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="mobile-drawer">
+          <div style={{ paddingBottom: "1.2rem", marginBottom: "0.8rem", borderBottom: "1px solid rgba(255,255,255,0.12)" }}>
+            <img
+              src="/images/bhoomihub-logo-horizontal.png"
+              alt="BHOOMIHUB"
+              style={{ height: "40px", width: "auto", objectFit: "contain" }}
+            />
+          </div>
           {navLinks.map(link => (
             <Link
               key={link.id}
@@ -135,6 +131,7 @@ export default function Header({ onOpenSiteVisit }: HeaderProps) {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleWhatsAppClick}
               className="btn btn-emerald"
               style={{ padding: "0.8rem", textAlign: "center", width: "100%" }}
             >

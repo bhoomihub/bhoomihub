@@ -24,11 +24,11 @@ export default function Footer() {
         >
           {/* Brand info */}
           <div>
-            <Link href="#home" style={{ display: "inline-block", marginBottom: "1rem" }}>
+            <Link href="#home" style={{ display: "inline-block", marginBottom: "1.25rem" }}>
               <img
-                src="/images/bhoomihub-logo.jpg"
+                src="/images/bhoomihub-logo.png"
                 alt="BHOOMIHUB — Your Land. Your Legacy."
-                style={{ height: "68px", width: "auto", objectFit: "contain", borderRadius: "6px" }}
+                style={{ height: "96px", width: "auto", objectFit: "contain", filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.5))" }}
               />
             </Link>
             <p style={{ color: "rgba(255, 255, 255, 0.68)", fontSize: "0.88rem", lineHeight: 1.7, marginTop: "0.5rem" }}>
