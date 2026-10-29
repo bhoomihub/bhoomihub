@@ -67,12 +67,12 @@ export default function RootLayout({
     logo: "https://bhommihub.netlify.app/images/bhoomihub-logo.png",
     description: "Direct-to-consumer premium land plotting and real estate investment platform in Coimbatore.",
     url: "https://bhommihub.netlify.app",
-    telephone: "+919876543210",
-    email: "hello@bhoomihub.in",
+    telephone: "+916374171413",
+    email: "bhoomihubrealestate@gmail.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "123 Avinashi Road, Near Lakshmi Mills",
-      addressLocality: "Coimbatore",
+      streetAddress: "40,kovai raod, near bus stand",
+      addressLocality: "Sathyamangalam",
       addressRegion: "Tamil Nadu",
       postalCode: "641037",
       addressCountry: "IN"
