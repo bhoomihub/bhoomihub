@@ -48,6 +48,9 @@ export const metadata: Metadata = {
     title: "BHOOMIHUB — Your Land. Your Legacy.",
     description: "Premium DTCP & TN RERA approved plots in Coimbatore. 100% legal scrutiny with zero brokerage.",
     images: ["/images/bhoomihub-logo.png"]
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined
   }
 };
 
