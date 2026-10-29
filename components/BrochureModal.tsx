@@ -160,7 +160,7 @@ Helpline: +91 98765 43210 | www.bhoomihub.in
                 <input
                   type="tel"
                   required
-                  placeholder="e.g. 9843212345"
+                  placeholder="e.g. 6374171413"
                   value={formData.phone}
                   onChange={e => setFormData({ ...formData, phone: e.target.value })}
                   style={{
