@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
+import { GA_MEASUREMENT_ID } from "../lib/analytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bhommihub.netlify.app"),
@@ -99,6 +101,26 @@ export default function RootLayout({
         />
       </head>
       <body>
+        {/* Google Analytics 4 (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        />
+        <Script
+          id="google-analytics-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}', {
+                page_path: window.location.pathname,
+                send_page_view: true
+              });
+            `
+          }}
+        />
         {children}
       </body>
     </html>

@@ -91,6 +91,8 @@ export function generateWhatsAppUrl(phone: string, message: string, sectionConte
   return `https://wa.me/${cleanPhone}?text=${encoded}`;
 }
 
+export const GA_MEASUREMENT_ID = "G-2FYQYFVTMQ";
+
 export const BHOOMIHUB_PHONE = "+919876543210";
 export const BHOOMIHUB_WA_PHONE = "919876543210";
 export const BHOOMIHUB_EMAIL = "hello@bhoomihub.in";
