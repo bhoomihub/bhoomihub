@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     images: ["/images/bhoomihub-logo.png"]
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined
+    google: "VJBLykrQ6tyxBLuIFsIzLwjvPB-68mH3L4QGJItJs-g"
   }
 };
 
