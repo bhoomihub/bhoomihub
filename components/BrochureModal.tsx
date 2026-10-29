@@ -93,8 +93,8 @@ Demand Drivers:
 ${property.investmentMetrics.nearbyDemandDrivers.map(d => `• ${d}`).join("\n")}
 =====================================================
 Verified & Certified by BHOOMIHUB Legal Scrutiny Cell
-Head Office: 123 Avinashi Road, Coimbatore, Tamil Nadu
-Helpline: +91 98765 43210 | www.bhoomihub.in
+Head Office: 40 kovai road,sathyamangalam, Tamil Nadu
+Helpline: +91 6374171413 | www.bhoomihub.in
 =====================================================
     `.trim();
 
