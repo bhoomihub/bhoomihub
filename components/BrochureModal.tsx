@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Property } from "../lib/properties";
 import { brochureLeadSchema, BrochureLeadFormData } from "../lib/validations";
-import { BHOOMIHUB_WA_PHONE, generateWhatsAppUrl, trackEvent } from "../lib/analytics";
+import { BHOOMIHUB_PHONE, BHOOMIHUB_ADDRESS, BHOOMIHUB_WA_PHONE, generateWhatsAppUrl, trackEvent } from "../lib/analytics";
 
 interface BrochureModalProps {
   isOpen: boolean;
@@ -93,8 +93,8 @@ Demand Drivers:
 ${property.investmentMetrics.nearbyDemandDrivers.map(d => `• ${d}`).join("\n")}
 =====================================================
 Verified & Certified by BHOOMIHUB Legal Scrutiny Cell
-Head Office: 40 kovai road,sathyamangalam, Tamil Nadu
-Helpline: +91 6374171413 | www.bhoomihub.in
+Head Office: ${BHOOMIHUB_ADDRESS}
+Helpline: ${BHOOMIHUB_PHONE} | www.bhoomihub.in
 =====================================================
     `.trim();
 

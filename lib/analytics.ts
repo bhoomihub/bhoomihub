@@ -93,7 +93,7 @@ export function generateWhatsAppUrl(phone: string, message: string, sectionConte
 
 export const GA_MEASUREMENT_ID = "G-2FYQYFVTMQ";
 
-export const BHOOMIHUB_PHONE = "+919876543210";
-export const BHOOMIHUB_WA_PHONE = "919876543210";
+export const BHOOMIHUB_PHONE = "+91 6374171413";
+export const BHOOMIHUB_WA_PHONE = "916374171413";
 export const BHOOMIHUB_EMAIL = "hello@bhoomihub.in";
-export const BHOOMIHUB_ADDRESS = "123 Avinashi Road, Near Lakshmi Mills, Coimbatore, Tamil Nadu – 641037";
+export const BHOOMIHUB_ADDRESS = "Sathy - Bhavani State Highway, Alathukombai, Post, Alathucombai, Tamil Nadu 638401";

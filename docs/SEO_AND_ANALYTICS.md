@@ -4,8 +4,8 @@
 Bhoomihub includes structured `RealEstateAgent` JSON-LD metadata in `app/layout.tsx`:
 - Organization: BHOOMIHUB
 - Service Corridors: Coimbatore, Saravanampatti, Kovaipudur, Pollachi, Tirupur
-- Head Office: 123 Avinashi Road, Coimbatore
-- Telephone: +91 98765 43210
+- Head Office: Sathy - Bhavani State Highway, Alathukombai, Post, Alathucombai, Tamil Nadu 638401
+- Telephone: +91 6374171413
 
 ## 2. GA4 Event Tracking Taxonomy
 All conversion actions trigger standardized Google Analytics 4 events through `lib/analytics.ts`:

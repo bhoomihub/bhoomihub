@@ -32,5 +32,5 @@ document.getElementById("contactForm").addEventListener("submit",e=>{
  const f=new FormData(e.target);
  const msg=`Hi BHOOMIHUB, I'm interested in ${f.get("property")||"your properties"}. My name is ${f.get("name")} and my phone number is ${f.get("phone")}.`;
  document.getElementById("formMessage").textContent="Thank you for contacting BHOOMIHUB. Our team will get in touch with you shortly.";
- window.open("https://wa.me/919876543210?text="+encodeURIComponent(msg),"_blank");
+ window.open("https://wa.me/916374171413?text="+encodeURIComponent(msg),"_blank");
 });

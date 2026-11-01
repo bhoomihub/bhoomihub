@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { BHOOMIHUB_WA_PHONE, generateWhatsAppUrl, trackEvent } from "../lib/analytics";
+import { BHOOMIHUB_PHONE, BHOOMIHUB_WA_PHONE, generateWhatsAppUrl, trackEvent } from "../lib/analytics";
 
 interface FloatingWhatsAppProps {
   currentPropertySlug?: string;
@@ -148,7 +148,7 @@ export default function FloatingWhatsApp({ currentPropertyName }: FloatingWhatsA
                 <span className="wa-action-icon">💬</span>
                 <div className="wa-action-text">
                   <strong>Chat Directly on WhatsApp</strong>
-                  <small>Immediate dispatch to +91 98765 43210</small>
+                  <small>Immediate dispatch to {BHOOMIHUB_PHONE}</small>
                 </div>
               </button>
             </div>

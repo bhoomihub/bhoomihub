@@ -71,10 +71,10 @@ export default function RootLayout({
     email: "bhoomihubrealestate@gmail.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "40,kovai raod, near bus stand",
-      addressLocality: "Sathyamangalam",
+      streetAddress: "Sathy - Bhavani State Highway, Alathukombai Post",
+      addressLocality: "Alathucombai",
       addressRegion: "Tamil Nadu",
-      postalCode: "641037",
+      postalCode: "638401",
       addressCountry: "IN"
     },
     geo: {

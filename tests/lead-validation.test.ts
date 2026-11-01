@@ -49,7 +49,7 @@ describe("Lead Validation & Security Schemas", () => {
   it("validates contact inquiry submission", () => {
     const contactData = {
       name: "Senthil Kumar",
-      phone: "9876543210",
+      phone: "6374171413",
       email: "senthil@outlook.com",
       preferredCorridor: "North Coimbatore IT Belt",
       budgetRange: "₹25L – ₹50L",
