@@ -95,5 +95,5 @@ export const GA_MEASUREMENT_ID = "G-2FYQYFVTMQ";
 
 export const BHOOMIHUB_PHONE = "+91 6374171413";
 export const BHOOMIHUB_WA_PHONE = "916374171413";
-export const BHOOMIHUB_EMAIL = "hello@bhoomihub.in";
+export const BHOOMIHUB_EMAIL = "bhoomihubrealestate@gmail.com";
 export const BHOOMIHUB_ADDRESS = "Sathy - Bhavani State Highway, Alathukombai, Post, Alathucombai, Tamil Nadu 638401";
