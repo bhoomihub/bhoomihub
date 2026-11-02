@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { calculateLandEmi, formatIndianCurrency } from "../../lib/emi";
 import { trackEvent } from "../../lib/analytics";
 
@@ -258,15 +258,6 @@ export default function EmiCalculatorSection({ onOpenSiteVisit }: EmiCalculatorS
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 900px) {
-          .calc-grid {
-            grid-template-columns: 1fr !important;
-            padding: 1.8rem !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

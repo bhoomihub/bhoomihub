@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { contactInquirySchema, ContactInquiryFormData } from "../../lib/validations";
 import { CORRIDORS } from "../../lib/properties";
 import { BHOOMIHUB_PHONE, BHOOMIHUB_EMAIL, BHOOMIHUB_ADDRESS, BHOOMIHUB_WA_PHONE, generateWhatsAppUrl, trackEvent } from "../../lib/analytics";
@@ -309,14 +309,6 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 900px) {
-          .contact-layout {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { CORRIDORS, PROPERTY_TYPES } from "../../lib/properties";
 
 interface SearchFilterSectionProps {
@@ -30,7 +29,7 @@ export default function SearchFilterSection({
       }}
     >
       <div
-        className="container"
+        className="container search-filter-grid"
         style={{
           background: "var(--color-white)",
           borderRadius: "var(--radius-md)",
@@ -169,20 +168,6 @@ export default function SearchFilterSection({
           </button>
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 960px) {
-          .container {
-            grid-template-columns: 1fr 1fr !important;
-          }
-        }
-        @media (max-width: 600px) {
-          .container {
-            grid-template-columns: 1fr !important;
-            padding: 1.5rem !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

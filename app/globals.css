@@ -924,4 +924,30 @@ button, input, select, textarea {
     width: 300px;
     right: 0;
   }
+
+  .connectivity-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .calc-grid {
+    grid-template-columns: 1fr !important;
+    padding: 1.8rem !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .search-filter-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-filter-grid {
+    grid-template-columns: 1fr !important;
+    padding: 1.5rem !important;
+  }
 }

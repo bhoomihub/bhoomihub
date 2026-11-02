@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { trackEvent } from "../../lib/analytics";
 
 interface Hub {
@@ -195,14 +195,6 @@ export default function ConnectivityMatrixSection() {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 900px) {
-          .connectivity-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }
