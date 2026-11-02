@@ -59,6 +59,7 @@ export default function Footer() {
               <Link href="#properties" style={{ transition: "color 0.2s" }}>Avinashi Road (Premium Arterial)</Link>
               <Link href="#properties" style={{ transition: "color 0.2s" }}>Sulur (Defence Corridor &amp; Airport)</Link>
               <Link href="#properties" style={{ transition: "color 0.2s" }}>Siruvani Foothills (Eco-Farmland)</Link>
+              <Link href="#properties" style={{ transition: "color 0.2s" }}>Gobichettipalayam &amp; Sathy (Villas &amp; Plots)</Link>
             </div>
           </div>
 

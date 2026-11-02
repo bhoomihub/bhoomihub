@@ -11,9 +11,20 @@ interface Hub {
 }
 
 export default function ConnectivityMatrixSection() {
-  const [activeCorridorTab, setActiveCorridorTab] = useState<"Saravanampatti" | "Kovaipudur" | "Pollachi Road" | "Avinashi Road">("Saravanampatti");
+  const [activeCorridorTab, setActiveCorridorTab] = useState<"Gobichettipalayam" | "Saravanampatti" | "Kovaipudur" | "Pollachi Road" | "Avinashi Road">("Gobichettipalayam");
 
   const corridorData: Record<string, { title: string; desc: string; mapQuery: string; hubs: Hub[] }> = {
+    Gobichettipalayam: {
+      title: "Gobichettipalayam — Premier Academic & Green Living Hub",
+      desc: "Celebrated for its pristine natural surroundings, premier institutions including Gobi Arts & Science College, and direct Sathy - Bhavani highway connectivity. Home to Bhoomihub's newest independent villa, plot, and commercial developments.",
+      mapQuery: "Gobichettipalayam, Tamil Nadu",
+      hubs: [
+        { name: "Gobi Arts & Science College", category: "Education", distanceMin: "2 mins", significance: "Premier multidisciplinary academic landmark" },
+        { name: "Sathy - Bhavani State Highway", category: "Aviation & Transit", distanceMin: "3 mins", significance: "Arterial regional connectivity corridor" },
+        { name: "Gobi Central Bus Terminal", category: "Aviation & Transit", distanceMin: "5 mins", significance: "Direct inter-district transit link" },
+        { name: "Erode Commercial & Rail Junction", category: "IT & Tech", distanceMin: "35 mins", significance: "Textile and agro-industrial commerce" }
+      ]
+    },
     Saravanampatti: {
       title: "Saravanampatti — North Coimbatore IT Engine",
       desc: "Home to CHIL Special Economic Zone, hosting global technology leaders including Bosch, Cognizant, and Amazon. Surging IT professional workforce creating premier villa plot demand.",
@@ -81,7 +92,7 @@ export default function ConnectivityMatrixSection() {
             <button
               key={tab}
               onClick={() => {
-                const selected = tab as "Saravanampatti" | "Kovaipudur" | "Pollachi Road" | "Avinashi Road";
+                const selected = tab as "Gobichettipalayam" | "Saravanampatti" | "Kovaipudur" | "Pollachi Road" | "Avinashi Road";
                 trackEvent("connectivity_tab_switch", { corridor: selected });
                 setActiveCorridorTab(selected);
               }}
