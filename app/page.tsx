@@ -35,7 +35,7 @@ export default function HomePage() {
   const [selectedPropertyForVisit, setSelectedPropertyForVisit] = useState<Property | null>(null);
 
   const [brochureOpen, setBrochureOpen] = useState<boolean>(false);
-  const [selectedPropertyForBrochure, setSelectedPropertyForBrochure] = useState<Property>(PROPERTIES[0]);
+  const [selectedPropertyForBrochure, setSelectedPropertyForBrochure] = useState<Property>(PROPERTIES[0]!);
 
   const [detailModalProperty, setDetailModalProperty] = useState<Property | null>(null);
 

@@ -71,6 +71,7 @@ export default function UtmScrollTracker() {
         // Sort by greatest visibility on screen
         visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
         const activeEntry = visibleEntries[0];
+        if (!activeEntry) return;
         const sectionId = activeEntry.target.id;
 
         if (sectionId === activeSectionRef.current) return;

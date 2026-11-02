@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { trackEvent } from "../../lib/analytics";
 
+type CorridorTab = "Gobi Central" | "Bangalapudur" | "Modachur" | "Jyothi Nagar";
+
 interface Hub {
   name: string;
   category: "IT & Tech" | "Aviation & Transit" | "Healthcare" | "Education";
@@ -10,10 +12,17 @@ interface Hub {
   significance: string;
 }
 
-export default function ConnectivityMatrixSection() {
-  const [activeCorridorTab, setActiveCorridorTab] = useState<"Gobi Central" | "Bangalapudur" | "Modachur" | "Jyothi Nagar">("Gobi Central");
+interface CorridorDetail {
+  title: string;
+  desc: string;
+  mapQuery: string;
+  hubs: Hub[];
+}
 
-  const corridorData: Record<string, { title: string; desc: string; mapQuery: string; hubs: Hub[] }> = {
+export default function ConnectivityMatrixSection() {
+  const [activeCorridorTab, setActiveCorridorTab] = useState<CorridorTab>("Gobi Central");
+
+  const corridorData: Record<CorridorTab, CorridorDetail> = {
     "Gobi Central": {
       title: "Gobichettipalayam Central — Town Hub & Balaji Nagar",
       desc: "Prime connectivity at the heart of Gobichettipalayam. Direct access to the Sathy - Bhavani highway, leading matriculation schools, and bustling commercial downtown.",
@@ -60,7 +69,7 @@ export default function ConnectivityMatrixSection() {
     }
   };
 
-  const active = corridorData[activeCorridorTab];
+  const active: CorridorDetail = corridorData[activeCorridorTab] ?? corridorData["Gobi Central"];
 
   return (
     <section className="section" id="connectivity" style={{ background: "var(--color-emerald-forest)", color: "white" }}>

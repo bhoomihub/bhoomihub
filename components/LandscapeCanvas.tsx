@@ -73,6 +73,7 @@ export default function LandscapeCanvas() {
       // Interconnected nodes (representing surveyed land points)
       for (let i = 0; i < nodes.length; i++) {
         const node = nodes[i];
+        if (!node) continue;
         node.x += node.vx;
         node.y += node.vy;
 
@@ -88,6 +89,7 @@ export default function LandscapeCanvas() {
         // Connect nearby nodes
         for (let k = i + 1; k < nodes.length; k++) {
           const other = nodes[k];
+          if (!other) continue;
           const dx = node.x - other.x;
           const dy = node.y - other.y;
           const dist = Math.sqrt(dx * dx + dy * dy);

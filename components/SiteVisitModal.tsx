@@ -20,7 +20,7 @@ export default function SiteVisitModal({
     fullName: "",
     phone: "",
     email: "",
-    propertyId: initialProperty ? initialProperty.id : PROPERTIES[0].id,
+    propertyId: initialProperty ? initialProperty.id : (PROPERTIES[0]?.id ?? ""),
     visitDate: new Date(Date.now() + 86400000 * 2).toISOString().split("T")[0],
     timeSlot: "10:00 AM (Morning)",
     transportMode: "Free AC Cab Pickup (Bhoomihub Concierge)",
@@ -34,7 +34,7 @@ export default function SiteVisitModal({
   if (!isOpen) return null;
 
   const selectedProperty =
-    PROPERTIES.find(p => p.id === formData.propertyId) || PROPERTIES[0];
+    PROPERTIES.find(p => p.id === formData.propertyId) || PROPERTIES[0]!;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
