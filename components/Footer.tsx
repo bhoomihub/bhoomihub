@@ -53,13 +53,11 @@ export default function Footer() {
               Growth Corridors
             </h4>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", fontSize: "0.88rem", color: "rgba(255, 255, 255, 0.7)" }}>
-              <Link href="#properties" style={{ transition: "color 0.2s" }}>Saravanampatti (IT Corridor)</Link>
-              <Link href="#properties" style={{ transition: "color 0.2s" }}>Kovaipudur (Western Ghats Breeze)</Link>
-              <Link href="#properties" style={{ transition: "color 0.2s" }}>Pollachi Road (4-Lane NH-83)</Link>
-              <Link href="#properties" style={{ transition: "color 0.2s" }}>Avinashi Road (Premium Arterial)</Link>
-              <Link href="#properties" style={{ transition: "color 0.2s" }}>Sulur (Defence Corridor &amp; Airport)</Link>
-              <Link href="#properties" style={{ transition: "color 0.2s" }}>Siruvani Foothills (Eco-Farmland)</Link>
-              <Link href="#properties" style={{ transition: "color 0.2s" }}>Gobichettipalayam &amp; Sathy (Villas &amp; Plots)</Link>
+              <Link href="#properties" style={{ transition: "color 0.2s" }}>Sree Balaji Nagar (3 BHK Villas)</Link>
+              <Link href="#properties" style={{ transition: "color 0.2s" }}>Bangalapudur Road (Near Gobi Arts)</Link>
+              <Link href="#properties" style={{ transition: "color 0.2s" }}>Chinna Modachur (Houses with Shops)</Link>
+              <Link href="#properties" style={{ transition: "color 0.2s" }}>Jyothi Nagar Extension (Ready Homes)</Link>
+              <Link href="#properties" style={{ transition: "color 0.2s" }}>Sathy - Bhavani State Highway Belt</Link>
             </div>
           </div>
 

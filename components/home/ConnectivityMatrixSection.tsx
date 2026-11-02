@@ -11,62 +11,51 @@ interface Hub {
 }
 
 export default function ConnectivityMatrixSection() {
-  const [activeCorridorTab, setActiveCorridorTab] = useState<"Gobichettipalayam" | "Saravanampatti" | "Kovaipudur" | "Pollachi Road" | "Avinashi Road">("Gobichettipalayam");
+  const [activeCorridorTab, setActiveCorridorTab] = useState<"Gobi Central" | "Bangalapudur" | "Modachur" | "Jyothi Nagar">("Gobi Central");
 
   const corridorData: Record<string, { title: string; desc: string; mapQuery: string; hubs: Hub[] }> = {
-    Gobichettipalayam: {
-      title: "Gobichettipalayam — Premier Academic & Green Living Hub",
-      desc: "Celebrated for its pristine natural surroundings, premier institutions including Gobi Arts & Science College, and direct Sathy - Bhavani highway connectivity. Home to Bhoomihub's newest independent villa, plot, and commercial developments.",
+    "Gobi Central": {
+      title: "Gobichettipalayam Central — Town Hub & Balaji Nagar",
+      desc: "Prime connectivity at the heart of Gobichettipalayam. Direct access to the Sathy - Bhavani highway, leading matriculation schools, and bustling commercial downtown.",
       mapQuery: "Gobichettipalayam, Tamil Nadu",
       hubs: [
-        { name: "Gobi Arts & Science College", category: "Education", distanceMin: "2 mins", significance: "Premier multidisciplinary academic landmark" },
+        { name: "Gobi Central Bus Terminal", category: "Aviation & Transit", distanceMin: "4 mins", significance: "Inter-district express transit link" },
         { name: "Sathy - Bhavani State Highway", category: "Aviation & Transit", distanceMin: "3 mins", significance: "Arterial regional connectivity corridor" },
-        { name: "Gobi Central Bus Terminal", category: "Aviation & Transit", distanceMin: "5 mins", significance: "Direct inter-district transit link" },
-        { name: "Erode Commercial & Rail Junction", category: "IT & Tech", distanceMin: "35 mins", significance: "Textile and agro-industrial commerce" }
+        { name: "Leading CBSE & Matric Schools", category: "Education", distanceMin: "4 mins", significance: "Top tier academic campuses" },
+        { name: "Erode Commercial & Rail Junction", category: "IT & Tech", distanceMin: "35 mins", significance: "Major textile and trade junction" }
       ]
     },
-    Saravanampatti: {
-      title: "Saravanampatti — North Coimbatore IT Engine",
-      desc: "Home to CHIL Special Economic Zone, hosting global technology leaders including Bosch, Cognizant, and Amazon. Surging IT professional workforce creating premier villa plot demand.",
-      mapQuery: "Saravanampatti, Coimbatore, Tamil Nadu",
+    Bangalapudur: {
+      title: "Bangalapudur Road — Education & Green Enclave",
+      desc: "Situated right next to the historic Gobi Arts & Science College campus, just 500 meters from the main bus stop. An ideal green environment for families.",
+      mapQuery: "Gobi Arts & Science College, Karattadipalayam, Tamil Nadu",
       hubs: [
-        { name: "CHIL SEZ IT Park (Bosch, Cognizant)", category: "IT & Tech", distanceMin: "6 mins", significance: "8,500+ tech employees" },
-        { name: "Sankara College of Science & Commerce", category: "Education", distanceMin: "4 mins", significance: "Premier educational campus" },
-        { name: "KMCH Hospital (Avinashi Rd)", category: "Healthcare", distanceMin: "15 mins", significance: "Quaternary multi-specialty hub" },
-        { name: "Coimbatore International Airport", category: "Aviation & Transit", distanceMin: "18 mins", significance: "Direct domestic & Int'l flights" }
+        { name: "Gobi Arts & Science College", category: "Education", distanceMin: "2 mins walk", significance: "Premier multidisciplinary academic landmark" },
+        { name: "Bangalapudur Bus Stop", category: "Aviation & Transit", distanceMin: "5 mins walk", significance: "Frequent local and town bus service" },
+        { name: "Gobi Main Bazaar & Post Office", category: "Aviation & Transit", distanceMin: "8 mins", significance: "Central municipal civic core" },
+        { name: "Sathyamangalam Highway Connector", category: "Aviation & Transit", distanceMin: "10 mins", significance: "Direct state highway artery" }
       ]
     },
-    Kovaipudur: {
-      title: "Kovaipudur — Little Ooty Hill Breeze Sanctuary",
-      desc: "Set against the dramatic backdrop of the Western Ghats, Kovaipudur boasts an elevation 2.5°C cooler than downtown Coimbatore. The definitive corridor for bespoke retirement bungalows and doctor residences.",
-      mapQuery: "Kovaipudur, Coimbatore, Tamil Nadu",
+    Modachur: {
+      title: "Chinna Modachur — High Growth Commercial & Residential Belt",
+      desc: "A vibrant mixed-use growth node offering prime street frontage for commercial establishments alongside quiet residential living.",
+      mapQuery: "Modachur, Gobichettipalayam, Tamil Nadu",
       hubs: [
-        { name: "Western Ghats Forest Reserve", category: "Healthcare", distanceMin: "5 mins", significance: "Unpolluted mountain air index" },
-        { name: "VLB Janakiammal College", category: "Education", distanceMin: "3 mins", significance: "Established academic landmark" },
-        { name: "Ukkadam Central Terminal", category: "Aviation & Transit", distanceMin: "18 mins", significance: "Direct city connector" },
-        { name: "Palakkad Highway Connector", category: "Aviation & Transit", distanceMin: "7 mins", significance: "Inter-state commerce link" }
+        { name: "Modachur Main Road Market", category: "Aviation & Transit", distanceMin: "1 min", significance: "Active retail and convenience corridor" },
+        { name: "Gobi Central Bus Stand", category: "Aviation & Transit", distanceMin: "5 mins", significance: "Central bus terminus" },
+        { name: "Government Hospital & Medical Hub", category: "Healthcare", distanceMin: "6 mins", significance: "Emergency and multi-speciality care" },
+        { name: "Sathy - Bhavani Highway Junction", category: "Aviation & Transit", distanceMin: "7 mins", significance: "Fast highway access" }
       ]
     },
-    "Pollachi Road": {
-      title: "Pollachi Main Road — 4-Lane NH-83 Industrial Corridor",
-      desc: "Direct access to the recently widened 4-lane national highway. Prime logistics, agro-business warehousing, and high-density manufacturing bringing high capital appreciation.",
-      mapQuery: "Kinathukadavu, Coimbatore, Tamil Nadu",
+    "Jyothi Nagar": {
+      title: "Jyothi Nagar Extension — Quiet Gated Residential Enclave",
+      desc: "A well-planned community of compact independent homes with asphalt roads, streetlights, and quiet neighborhood surroundings.",
+      mapQuery: "Jyothi Nagar, Gobichettipalayam, Tamil Nadu",
       hubs: [
-        { name: "Kinathukadavu Railway Station", category: "Aviation & Transit", distanceMin: "5 mins", significance: "Rapid suburban rail transit" },
-        { name: "Eachanari Industrial Estate & SIDCO", category: "IT & Tech", distanceMin: "14 mins", significance: "Major engineering & auto hub" },
-        { name: "Karpagam Academy of Higher Education", category: "Education", distanceMin: "10 mins", significance: "Deemed university campus" },
-        { name: "Sundarapuram Market Junction", category: "Aviation & Transit", distanceMin: "16 mins", significance: "Vibrant South retail core" }
-      ]
-    },
-    "Avinashi Road": {
-      title: "Avinashi Road — Coimbatore’s Flagship Commercial Spine",
-      desc: "Coimbatore’s premier avenue featuring 5-star hospitality, top tertiary medical centers, and the new 10km elevated corridor reducing city transit to under 15 minutes.",
-      mapQuery: "Avinashi Road, Neelambur, Coimbatore, Tamil Nadu",
-      hubs: [
-        { name: "Coimbatore International Airport", category: "Aviation & Transit", distanceMin: "10 mins", significance: "Immediate runway connectivity" },
-        { name: "TIDEL Park Coimbatore", category: "IT & Tech", distanceMin: "12 mins", significance: "Tamil Nadu Government IT Hub" },
-        { name: "PSG Institute of Medical Sciences", category: "Education", distanceMin: "8 mins", significance: "World-class healthcare campus" },
-        { name: "Le Méridien & Radisson Blu", category: "Aviation & Transit", distanceMin: "5 mins", significance: "Luxury business hospitality" }
+        { name: "Daily Supermarkets & Convenience", category: "Aviation & Transit", distanceMin: "2 mins", significance: "Essential daily retail & provisions" },
+        { name: "Gobichettipalayam Town Center", category: "Aviation & Transit", distanceMin: "5 mins", significance: "Shopping and administrative offices" },
+        { name: "Gobi General Hospital", category: "Healthcare", distanceMin: "6 mins", significance: "Comprehensive medical facilities" },
+        { name: "State Highway Corridor", category: "Aviation & Transit", distanceMin: "8 mins", significance: "Regional highway transit" }
       ]
     }
   };
@@ -92,7 +81,7 @@ export default function ConnectivityMatrixSection() {
             <button
               key={tab}
               onClick={() => {
-                const selected = tab as "Gobichettipalayam" | "Saravanampatti" | "Kovaipudur" | "Pollachi Road" | "Avinashi Road";
+                const selected = tab as "Gobi Central" | "Bangalapudur" | "Modachur" | "Jyothi Nagar";
                 trackEvent("connectivity_tab_switch", { corridor: selected });
                 setActiveCorridorTab(selected);
               }}

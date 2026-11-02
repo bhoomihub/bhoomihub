@@ -64,8 +64,8 @@ export default function HeroSection({ onOpenSiteVisit }: HeroSectionProps) {
         {/* Live Authority KPI Metrics */}
         <div className="hero-kpis">
           <div className="kpi-item">
-            <strong>6+</strong>
-            <span>Prime Growth Corridors</span>
+            <strong>4</strong>
+            <span>Prime Developments</span>
           </div>
           <div className="kpi-item">
             <strong>100%</strong>
